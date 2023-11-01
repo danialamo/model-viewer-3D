@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="Description" content="Put your description here.">
   <base href="/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
+  
 
   <style>
     html,
@@ -13,14 +18,17 @@
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background-color: #ededed;
+      background-color: rgba(239, 239, 239, 0.93);
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
     }
   </style>
   <title>model-viewer-3D</title>
 </head>
 
 <body>
-  <model-viewer-3D></model-viewer-3D>
+  <model-viewer></model-viewer>
 
   <script type="module" src="./src/model-viewer-3D.js"></script>
 </body>
