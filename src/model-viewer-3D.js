@@ -1,9 +1,10 @@
 import { LitElement, html, css } from "lit";
-import "@shoelace-style/shoelace/dist/components/carousel/carousel.js";
+/**import "@shoelace-style/shoelace/dist/components/carousel/carousel.js";
 import "@shoelace-style/shoelace/dist/components/carousel-item/carousel-item.js";
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/input/input.js';
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/button/button.js';
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/card/card.js';
+**/
 
 export class ModelViewer3D extends LitElement{
     static get properties(){
@@ -29,6 +30,24 @@ export class ModelViewer3D extends LitElement{
         background: #FBFBFB;
         box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.20);
       }
+
+      sl-carousel{
+        display: flex;
+        width: 852px;
+        height: 273px;
+        justify-content: center;
+        align-items: center;
+        gap: 33px;
+        flex-shrink: 0;
+      }
+
+      sl-carousel-item{
+        width: 706px;
+        height: 273px;
+        flex-shrink: 0;
+        border: 1px solid #000;
+      }
+
       #model-display{
         display: inline-flex;
         padding: 24px;
@@ -127,7 +146,36 @@ export class ModelViewer3D extends LitElement{
         background: #FFF;
         /* Shadow X-Small */
         box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+        font-family: Montserrat;
+        font-size: 17.5px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 38px; /* 217.143% */
       }
+      .model-card::part(body){
+        display: flex;
+        height: 122px;
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        flex-shrink: 0;
+        align-self: stretch;
+      }
+      .model-card::part(image){
+        height: 267px;
+        width: 358px;
+        flex-shrink: 0;
+        align-self: stretch;
+      }
+      .model-card::part(footer){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px, 184px, 32px, 24px;
+      }
+    
+
        `;
 
     render(){
@@ -135,7 +183,7 @@ export class ModelViewer3D extends LitElement{
         <div id="previewCarousel">
             <sl-carousel navigation>
                 <sl-carousel-item>
-                   <img src="/assest/spaceman-half.jpg" />
+
                 </sl-carousel-item>
             </sl-carousel>
         </div> 
@@ -155,32 +203,8 @@ export class ModelViewer3D extends LitElement{
                      <sl-button variant="default" size="large">Search</sl-button>
                     </div>
                 </div>
-              </div>
-            <div id="search-display">
-              <hr>
-              <div id="card-slot">
-                ${this.cards.map(cards => html`
-                  <div id="item">
-                  </div>
-                `)}
-              </div>
-            </div>  
+              </div> 
        </div>
-       <sl-card class="model-card">
-       <img
-          slot="image"
-          src="https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
-          alt="A kitten walks towards camera on top of pallet."
-        />
-         <div slot = "header">
-           Header Title 
-         </div>
-         Lorem ipsum dolor sit amet, 
-         consectetur adipiscing elit. 
-         <div slot="footer">
-         <sl-button variant="primary">Preview</sl-button>
-         </div>
-       </sl-card>
      `
     }
 }
