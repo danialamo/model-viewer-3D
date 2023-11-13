@@ -11,38 +11,20 @@ export class mvSearchDisplay extends LitElement{
     }
     constructor(){
         super();
-        this.cards = [  {
-            "image" : "/assets/spacemanCardImage.png",
-            "title" : "Spaceman",
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        },
-        {
-            "image" : "/assets/spacemanCardImage.png",
-            "title" : "Spaceman",
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        },
-        {
-            "image" : "/assets/spacemanCardImage.png",
-            "title" : "Spaceman",
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        },
-        {
-            "image" : "/assets/spacemanCardImage.png",
-            "title" : "Spaceman",
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        },
-        {
-            "image" : "/assets/spacemanCardImage.png",
-            "title" : "Spaceman",
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        },
-        {
-            "image" : "/assets/spacemanCardImage.png",
-            "title" : "Spaceman",
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        this.cards = []; 
+    this.getUpdateResults();
+    }
+    getUpdateResults(){
+      const address = (new URL('/assets/cards.json', import.meta.url).href); 
+      fetch(address).then((response) =>{
+        if(response.ok){
+          console.log(response.json);
+          return response.json();
         }
-    ]; 
-  
+        return [];
+      }).then((data) => {
+        this.cards = [...data];
+      });
     }
 
     static styles = css`

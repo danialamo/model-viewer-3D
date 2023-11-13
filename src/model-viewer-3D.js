@@ -1,10 +1,7 @@
 import { LitElement, html, css } from "lit";
-import "@shoelace-style/shoelace/dist/components/carousel/carousel.js";
-import "@shoelace-style/shoelace/dist/components/carousel-item/carousel-item.js";
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/input/input.js';
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/button/button.js';
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/card/card.js';
-import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/carousel/carousel.js'; 
 import './mv-3D-searchDisplay';
 
 export class ModelViewer3D extends LitElement{
@@ -16,20 +13,6 @@ export class ModelViewer3D extends LitElement{
     constructor(){
       super(); 
       this.cards = []; 
-      this.getUpdateResults();
-    }
-
-    getUpdateResults(){
-      const address = (new URL('/assets/cards.json', import.meta.url).href); 
-      fetch(address).then((response) =>{
-        if(response.ok){
-          console.log(response.json);
-          return response.json();
-        }
-        return [];
-      }).then((data) => {
-        this.cards = [...data];
-      });
     }
     static styles = css`
       #previewCarousel{
@@ -143,25 +126,6 @@ export class ModelViewer3D extends LitElement{
 
     render(){
         return html`
-        <div id="previewCarousel">
-            <sl-carousel navigation>
-                <sl-carousel-item>
-                  <img 
-                  alt="A spaceman in a suit"
-                  src="/assets/spacemanCardImage.png">
-                </sl-carousel-item>
-                <sl-carousel-item>
-                  <img 
-                  alt="A spaceman in a suit"
-                  src="/assets/spacemanCardImage.png">
-                </sl-carousel-item>
-                <sl-carousel-item>
-                  <img 
-                  alt="A spaceman in a suit"
-                  src="/assets/spacemanCardImage.png">
-                </sl-carousel-item>
-            </sl-carousel>
-        </div> 
         <mv-display></mv-display>
      `
     }
