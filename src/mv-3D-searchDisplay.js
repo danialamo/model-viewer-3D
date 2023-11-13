@@ -35,8 +35,14 @@ export class mvSearchDisplay extends LitElement{
             "image" : "/assets/spacemanCardImage.png",
             "title" : "Spaceman",
             "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "image" : "/assets/spacemanCardImage.png",
+            "title" : "Spaceman",
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         }
     ]; 
+  
     }
 
     static styles = css`
@@ -99,8 +105,8 @@ export class mvSearchDisplay extends LitElement{
         line-height: normal;
       }
       hr{
-        margin: 24px;
-        width: 1190px;
+        margin: 16px;
+        width: 1125px;
         height: 1px;
       }
       #modelDisplay{
@@ -150,7 +156,6 @@ export class mvSearchDisplay extends LitElement{
             </sl-card>
             `)}
           </div>
-
         </div>
         `
     }

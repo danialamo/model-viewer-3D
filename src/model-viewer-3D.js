@@ -16,6 +16,20 @@ export class ModelViewer3D extends LitElement{
     constructor(){
       super(); 
       this.cards = []; 
+      this.getUpdateResults();
+    }
+
+    getUpdateResults(){
+      const address = (new URL('/assets/cards.json', import.meta.url).href); 
+      fetch(address).then((response) =>{
+        if(response.ok){
+          console.log(response.json);
+          return response.json();
+        }
+        return [];
+      }).then((data) => {
+        this.cards = [...data];
+      });
     }
     static styles = css`
       #previewCarousel{
