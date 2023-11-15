@@ -6,7 +6,7 @@ import '../src/model-viewer-3D.js';
 describe('ModelViewer3D', () => {
   let element;
   beforeEach(async () => {
-    element = await fixture(html`<model-viewer-3D></model-viewer-3D>`);
+    element = await fixture(html`<model-viewer-3d></model-viewer-3d>`);
   });
 
   it('renders a h1', () => {
