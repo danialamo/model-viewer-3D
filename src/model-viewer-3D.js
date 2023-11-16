@@ -20,4 +20,4 @@ export class ModelViewer3D extends LitElement{
      `
     }
 }
-customElements.define('model-viewer', ModelViewer3D);
+customElements.define('model-viewer-3d', ModelViewer3D);
