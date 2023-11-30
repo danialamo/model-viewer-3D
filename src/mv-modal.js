@@ -84,19 +84,19 @@ export class MvModal extends LitElement{
                     </div>
                 </div>   
             </div> 
-        <sl-button slot="footer" variant="primary">Close</sl-button>
+        <sl-button slot="footer" variant="primary" @click="${this.hide}">Close</sl-button>
         </sl-dialog>
 
-        <sl-button onclick="">Open Dialog</sl-button>
+        <sl-button @click="${this.show}">Open Dialog</sl-button>
         `
     }
 
-    connectedCallback(){
-        super.connectedCallback();
-        const dialog = document.querySelector('.dialog-overview');
-        dialog.show();
-        const closeButton = dialog.querySelector('sl-button[slot="footer"]');
-        closeButton.addEventListener('click', () => dialog.hide());
+    show(e) {
+        this.shadowRoot.querySelector('sl-dialog').show();
+    }
+
+    hide(e) {
+        this.shadowRoot.querySelector('sl-dialog').hide();
     }
 
 }
