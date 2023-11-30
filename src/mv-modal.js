@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit";
 import "@google/model-viewer/dist/model-viewer.js";
+import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/dialog/dialog.js';
 
 export class MvModal extends LitElement{
     static get properties(){
@@ -10,9 +11,10 @@ export class MvModal extends LitElement{
             embedCode : {type : String}
         }
     }
-    
+
     static styles = css`
      #modelContent{
+        height: 600px;
         display: flex; 
         flex-direction: row;
         align-items: flex-start;
@@ -24,6 +26,7 @@ export class MvModal extends LitElement{
     
      #modalInfo{
         max-width: 600px;
+        display: block;
      }
      #infoContent{
         display: flex;
@@ -52,42 +55,48 @@ export class MvModal extends LitElement{
         word-wrap: break-word; 
         width: 580px;
      }
-     #codeEmbed{
-        border-radius: 10px;
-        border: 1px solid #000;
-        width: 483px;
-        height: 165px;
-     }
 
     `;
 
-
     render(){
         return html`
-        <div id="modalContent"> 
-            <div id="modelLoad"> 
-                <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" 
-                src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" 
-                ar="ar" 
-                environment-image="https://modelviewer.dev/shared-assets/environments/moon_1k.hdr" 
-                poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp" 
-                shadow-intensity="1" camera-controls="camera-controls"
-                touch-action="pan-y" style="height: 500px;" ar-status="not-presenting" 
-                data-hax-layout="true" role="textbox"></model-viewer>
-            </div>
-            <div id="modalInfo">
-                <div class="infoContent">
-                        <h6>About</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia consectetur vehicula. 
-                            Integer ultricies enim eu ornare finibus.</p>
+        <sl-dialog label="Dialog" class="dialog-overview">
+            <div id="modalContent"> 
+                <div id="modelLoad"> 
+                    <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" 
+                    src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" 
+                    ar="ar" 
+                    environment-image="https://modelviewer.dev/shared-assets/environments/moon_1k.hdr" 
+                    poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp" 
+                    shadow-intensity="1" camera-controls="camera-controls"
+                    touch-action="pan-y" style="height: 500px;" ar-status="not-presenting" 
+                    data-hax-layout="true" role="textbox"></model-viewer>
                 </div>
-                <div class="infoContent">
-                        <h6>Embed</h6>
+                <div id="modalInfo">
+                    <div class="infoContent">
+                            <h6>About</h6>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia consectetur vehicula. 
+                                Integer ultricies enim eu ornare finibus.</p>
+                    </div>
+                    <div class="infoContent">
+                            <h6>Embed</h6>
                             <p>code-sample> template preserve-content="preserve-content">const great = "example"; const great = "example"; const great = "example";/template> /code-sample></p>
-                </div>
-            </div>   
-        </div> 
+                    </div>
+                </div>   
+            </div> 
+        <sl-button slot="footer" variant="primary">Close</sl-button>
+        </sl-dialog>
+
+        <sl-button onclick="">Open Dialog</sl-button>
         `
+    }
+
+    connectedCallback(){
+        super.connectedCallback();
+        const dialog = document.querySelector('.dialog-overview');
+        dialog.show();
+        const closeButton = dialog.querySelector('sl-button[slot="footer"]');
+        closeButton.addEventListener('click', () => dialog.hide());
     }
 
 }
