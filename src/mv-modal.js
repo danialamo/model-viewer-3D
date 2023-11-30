@@ -13,23 +13,30 @@ export class MvModal extends LitElement{
     
     static styles = css`
      #modelContent{
-        margin : 50px; 
         display: flex; 
         flex-direction: row;
-        gap: 40px;
-
+        align-items: flex-start;
+     }
+    
+     #modelLoad{
+        max-width: 600px;
+     }
+    
+     #modalInfo{
+        max-width: 600px;
      }
      #infoContent{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
         gap: 16px;
+        padding: 24px;
      }
+        
      h6{
         color: #000;
         font-family: Montserrat;
-        font-size: 24px;
+        font-size: 30px;
         font-style: normal;
         font-weight: 500;
         line-height: 180%; /* 43.2px */
@@ -38,10 +45,12 @@ export class MvModal extends LitElement{
      p{
         color: #000;
         font-family: Inter;
-        font-size: 20px;
+        font-size: 24px;
         font-style: normal;
         font-weight: 400;
         line-height: 180%; /* 36px */
+        word-wrap: break-word; 
+        width: 580px;
      }
      #codeEmbed{
         border-radius: 10px;
@@ -55,22 +64,28 @@ export class MvModal extends LitElement{
 
     render(){
         return html`
-        <div id="modalContent">
+        <div id="modalContent"> 
             <div id="modelLoad"> 
+                <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" 
+                src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" 
+                ar="ar" 
+                environment-image="https://modelviewer.dev/shared-assets/environments/moon_1k.hdr" 
+                poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp" 
+                shadow-intensity="1" camera-controls="camera-controls"
+                touch-action="pan-y" style="height: 500px;" ar-status="not-presenting" 
+                data-hax-layout="true" role="textbox"></model-viewer>
             </div>
             <div id="modalInfo">
                 <div class="infoContent">
-                    <h6>About</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia consectetur vehicula. 
-                        Integer ultricies enim eu ornare finibus.</p>
+                        <h6>About</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia consectetur vehicula. 
+                            Integer ultricies enim eu ornare finibus.</p>
                 </div>
                 <div class="infoContent">
-                    <h6>Embed</h6>
-                    <div id="codeEmbed">
-                        <p>This is where the Embed Code goes</p>
-                    </div>
+                        <h6>Embed</h6>
+                            <p>code-sample> template preserve-content="preserve-content">const great = "example"; const great = "example"; const great = "example";/template> /code-sample></p>
                 </div>
-            </div>
+            </div>   
         </div> 
         `
     }
