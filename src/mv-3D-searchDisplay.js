@@ -18,7 +18,6 @@ export class mvSearchDisplay extends LitElement{
       const address = (new URL('/assets/cards.json', import.meta.url).href); 
       fetch(address).then((response) =>{
         if(response.ok){
-          console.log(response.json);
           return response.json();
         }
         return [];
