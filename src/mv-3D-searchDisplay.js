@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit";
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/input/input.js';
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/button/button.js';
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/components/card/card.js';
+import './mv-modal.js'; 
 
 export class mvSearchDisplay extends LitElement{
     static get properties(){
@@ -12,8 +13,9 @@ export class mvSearchDisplay extends LitElement{
     constructor(){
         super();
         this.cards = []; 
-    this.getUpdateResults();
+        this.getUpdateResults();
     }
+
     getUpdateResults(){
       const address = (new URL('/assets/cards.json', import.meta.url).href); 
       fetch(address).then((response) =>{
@@ -21,9 +23,9 @@ export class mvSearchDisplay extends LitElement{
           return response.json();
         }
         return [];
-      }).then((data) => {
-        this.cards = [...data];
-      });
+        }).then((data) => {
+          this.cards = [...data];
+        });
     }
 
     static styles = css`
@@ -127,19 +129,25 @@ export class mvSearchDisplay extends LitElement{
                 src="${card.image}"
                 alt="A spaceman in a suit"
               />
-              <strong>${card.title}</strong><br /><br/>
+              <strong>${card.title}</strong><br/><br/>
               ${card.description}
               <br />
               <div slot="footer">
-                <sl-button variant="default" size="medium">Learn More</sl-button>
+                <sl-button variant="default" size="medium" @click="${this.show}">Learn More</sl-button>
                 <sl-rating></sl-rating>
               </div>
             </sl-card>
             `)}
+            <mv-modal></mv-modal>
           </div>
         </div>
         `
     }
+
+    show(e) {
+      this.shadowRoot.querySelector('mv-modal').show();
+  }
+
 
 }
 customElements.define('mv-display', mvSearchDisplay);

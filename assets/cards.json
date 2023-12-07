@@ -1,27 +1,27 @@
 [
     {
         "image" : "/assets/spacemanCardImage.png",
-        "title" : "SpaceWomen",
+        "title" : "Spaceman 1",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
         "image" : "/assets/spacemanCardImage.png",
-        "title" : "Spaceman",
+        "title" : "Spaceman 2",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
         "image" : "/assets/spacemanCardImage.png",
-        "title" : "Spaceman",
+        "title" : "Spaceman 3",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
         "image" : "/assets/spacemanCardImage.png",
-        "title" : "Spaceman",
+        "title" : "Spaceman 4",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
         "image" : "/assets/spacemanCardImage.png",
-        "title" : "Spaceman",
+        "title" : "Spaceman 5",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     }
 

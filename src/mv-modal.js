@@ -5,12 +5,15 @@ import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/compone
 export class MvModal extends LitElement{
     static get properties(){
         return{
-            title : {type : String},
-            model : {type : String},
-            info : {type: String},
-            embedCode : {type : String}
+            data : {type: Object}
         }
     }
+
+    constructor(){
+        super();
+        this.data = {};
+    }
+
 
     static styles = css`
      #modelContent{
@@ -60,7 +63,7 @@ export class MvModal extends LitElement{
 
     render(){
         return html`
-        <sl-dialog label="Dialog" class="dialog-overview">
+        <sl-dialog label="Dialog" class="dialog-overview" style="--width: 700px;">
             <div id="modalContent"> 
                 <div id="modelLoad"> 
                     <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" 
@@ -86,8 +89,6 @@ export class MvModal extends LitElement{
             </div> 
         <sl-button slot="footer" variant="primary" @click="${this.hide}">Close</sl-button>
         </sl-dialog>
-
-        <sl-button @click="${this.show}">Open Dialog</sl-button>
         `
     }
 
