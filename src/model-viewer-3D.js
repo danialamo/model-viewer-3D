@@ -16,7 +16,7 @@ export class ModelViewer3D extends LitElement{
     }
     render(){
         return html`
-        <mv-display></mv-display>
+        <mv-display></mv-display> 
      `
     }
 }
