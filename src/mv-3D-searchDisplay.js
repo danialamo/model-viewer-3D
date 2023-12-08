@@ -122,7 +122,11 @@ export class mvSearchDisplay extends LitElement{
           <div id="modelSearch">
             <div id="modelSearchHeader">
               <h6>Models</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia consectetur vehicula. Integer ultricies enim eu ornare finibus.</p>
+              <p>
+              Discover a world of 3D models at your fingertips! Our application 
+              lets you search effortlessly for a variety of 3D wonders—unlocking a realm of creative possibilities at your command.
+              Start your exploration now!
+              </p>
             </div>
             <div id="searchBar">
             <sl-input placeholder="Search 3D Models..."></sl-input>
