@@ -7,7 +7,15 @@ import './mv-modal.js';
 export class mvSearchDisplay extends LitElement{
     static get properties(){
         return{
-            cards: {type: Array}
+            cards: {type: Array},
+            activeTitle: {type: String}, 
+            activeDescription : {type: String},
+            activeAlt : {type: String},
+            activeSrc : {type: String},
+            activemodelImage : {type: String},
+            activePoster : {type: String},
+            activeAbout : {type: String},
+            activeEmbed : {type: String},
         }
     }
     constructor(){
@@ -26,6 +34,7 @@ export class mvSearchDisplay extends LitElement{
         }).then((data) => {
           this.cards = [...data];
         });
+        console.log(this.cards);
     }
 
     static styles = css`
@@ -135,21 +144,34 @@ export class mvSearchDisplay extends LitElement{
               ${card.description}
               <br />
               <div slot="footer">
-                <sl-button variant="default" size="medium" @click="${this.show}">Learn More</sl-button>
+                <sl-button variant="default" size="medium" @click="${e => this.show(e, card)}">Learn More</sl-button>
                 <sl-rating></sl-rating>
               </div>
             </sl-card>
             `)}
-            <mv-modal></mv-modal>
+            <mv-modal 
+            title="${this.activeTitle}" 
+            text="${this.activeAbout}"
+            embed="${this.activeEmbed}"
+            alt="${this.activeAlt}"
+            src="${this.activeSrc}"
+            modelImage="${this.activemodelImage}"
+            poster="${this.activePoster}"></mv-modal>
           </div>
         </div>
         `
     }
-
-    show(e) {
+    show(e, card) {
+      this.activeTitle = card.title; 
+      this.activeDescription = card.description; 
+      this.activeAlt = card.alt; 
+      this.activeSrc = card.src; 
+      this.activemodelImage = card.modelImage; 
+      this.activePoster = card.poster; 
+      this.activeAbout = card.about; 
+      this.activeEmbed = card.embed; 
       this.shadowRoot.querySelector('mv-modal').show();
   }
-
 
 }
 customElements.define('mv-display', mvSearchDisplay);

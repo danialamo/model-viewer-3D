@@ -5,7 +5,7 @@
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
         "src" : "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
-        "model-image": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
+        "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
         "poster": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp",
         "about" : "Insert Description of model",
         "embed" : "Insert embed code here"
@@ -16,7 +16,7 @@
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
         "src" : "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
-        "model-image": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
+        "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
         "poster": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp",
         "about" : "Insert Description of model",
         "embed" : "Insert embed code here"
@@ -27,7 +27,7 @@
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
         "src" : "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
-        "model-image": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
+        "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
         "poster": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp",
         "about" : "Insert Description of model",
         "embed" : "Insert embed code here"
@@ -38,7 +38,7 @@
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
         "src" : "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
-        "model-image": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
+        "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
         "poster": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp",
         "about" : "Insert Description of model",
         "embed" : "Insert embed code here"
@@ -49,7 +49,7 @@
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
         "src" : "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
-        "model-image": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
+        "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
         "poster": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp",
         "about" : "Insert Description of model",
         "embed" : "Insert embed code here"
@@ -60,9 +60,10 @@
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
         "src" : "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
-        "model-image": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
+        "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
         "poster": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp",
         "about" : "Insert Description of model",
         "embed" : "Insert embed code here"
     }
+    
 ]

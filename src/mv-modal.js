@@ -17,13 +17,13 @@ export class MvModal extends LitElement{
 
     constructor(){
         super();
-        this.title = "Spaceman 1";
-        this.text = "Insert Description of model";
-        this.embed = "Inset embed code here";
-        this.alt = "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum";
-        this.src = "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb";
-        this.modelImage = "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr";
-        this.poster = "https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp";
+        this.title = "";
+        this.text = "";
+        this.embed = "";
+        this.alt = "";
+        this.src = "";
+        this.modelImage = "";
+        this.poster = "";
     }
 
 
