@@ -121,6 +121,8 @@ export class mvSearchDisplay extends LitElement{
             </div>
           </div>
           <hr>
+
+
           <div id="modelDisplay">
             ${this.cards.map(card => html`
             <sl-card class="card-overview">
