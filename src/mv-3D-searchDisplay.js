@@ -34,7 +34,6 @@ export class mvSearchDisplay extends LitElement{
         }).then((data) => {
           this.cards = [...data];
         });
-        console.log(this.cards);
     }
 
     static styles = css`
