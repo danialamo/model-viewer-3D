@@ -53,17 +53,6 @@
         "poster": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp",
         "about" : "Neil Armstrong's spacesuit, curated by the Smithsonian Digitization Programs Office and National Air and Space Museum, encapsulates the historic Apollo 11 moon landing. Meticulously preserved through advanced digitization, this artifact allows enthusiasts to explore the details of Armstrong's lunar attire, from intricate stitching to embedded lunar dust. The high-resolution scans and 3D models offer a unique window into the triumphs and challenges of space exploration, preserving this iconic piece for future generations and connecting us to the monumental moment when humanity first set foot on the moon.",
         "embed" : "Insert embed code here"
-    },
-    {
-        "image" : "/assets/spacemanCardImage.png",
-        "title" : "Spaceman 6",
-        "description" : "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
-        "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
-        "src" : "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
-        "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
-        "poster": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp",
-        "about" : "Neil Armstrong's spacesuit, curated by the Smithsonian Digitization Programs Office and National Air and Space Museum, encapsulates the historic Apollo 11 moon landing. Meticulously preserved through advanced digitization, this artifact allows enthusiasts to explore the details of Armstrong's lunar attire, from intricate stitching to embedded lunar dust. The high-resolution scans and 3D models offer a unique window into the triumphs and challenges of space exploration, preserving this iconic piece for future generations and connecting us to the monumental moment when humanity first set foot on the moon.",
-        "embed" : "Insert embed code here"
     }
     
 ]
