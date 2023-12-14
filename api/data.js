@@ -31,10 +31,11 @@ jwtClient.authorize(function (err, tokens) {
  const sheets = google.sheets('v4');
 
  export default async function handler(req, res) {
+    const search = req.query.search || '';
     // sheet ID we are pulling from
     let spreadsheetId = '1uTd_uBHnggaWBvgA5oWCKehzSsIT7UFh_2c4CTvMICQ';
     // range
-    let sheetRange = 'Sheet1!';
+    let sheetRange = 'Sheet1!2:10';
     let results = [];
     sheets.spreadsheets.values.get({
         auth: jwtClient,
@@ -58,6 +59,9 @@ jwtClient.authorize(function (err, tokens) {
             "embed": row[8]
           });
         }
+      }
+      if(search != '') {  
+        return results;
       }
       res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
       res.setHeader("Access-Control-Allow-Credentials", "true");

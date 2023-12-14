@@ -24,8 +24,8 @@ export class mvSearchDisplay extends LitElement{
         this.getUpdateResults();
     }
 
-    getUpdateResults(){
-      const address = (new URL(`/api/data.js`, import.meta.url).href); 
+    getUpdateResults(value = ''){
+      const address = `/api/data?search=${value}`; 
       fetch(address).then((response) =>{
         if(response.ok){
           return response.json();
