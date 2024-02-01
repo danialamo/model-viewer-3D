@@ -8,8 +8,9 @@
   <base href="/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/light.css" />
   <style>
     html,
@@ -22,14 +23,15 @@
       flex-direction: column;
       justify-content: center; 
       align-items: center; 
+      width:100%;
     }
   </style>
   <title>3D Model Viewer</title>
 </head>
 
 <body>
-  <model-viewer-3d></model-viewer-3d>
-  <script type="module" src="./src/model-viewer-3D.js"></script>
+  <mv-display></mv-display> 
+  <script type="module" src="./src/mv-3D-searchDisplay.js"></script>
   <script type="module" src="./src/mv-modal.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js"></script>
 </body>
