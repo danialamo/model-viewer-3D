@@ -21,7 +21,17 @@ export class mvSearchDisplay extends LitElement{
     }
     constructor(){
         super();
-        this.cards = []; 
+        this.cards = [{
+          "title": "Spaceman 1",
+          "image": "spacemanCardImage.png",
+          "decription": "spacemanCardImage.png",
+          "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
+          "src": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
+          "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
+          "poster": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
+          "about": "*Insert About Here*", 
+          "embed": "Insert embed code"
+        }]; 
         this.getUpdateResults();
     }
 
@@ -54,10 +64,10 @@ export class mvSearchDisplay extends LitElement{
         justify-content: center;
         align-items: center;
       }
-      #modelViewer{
-
+      sl-card{
+        width: 400px; 
+        height: 500px;
       }
-
   
     `
     
