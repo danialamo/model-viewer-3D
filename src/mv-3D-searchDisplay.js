@@ -24,7 +24,7 @@ export class mvSearchDisplay extends LitElement{
         this.cards = [{
           "title": "Spaceman 1",
           "image": "spacemanCardImage.png",
-          "decription": "spacemanCardImage.png",
+          "description": "spacemanCardImage.png",
           "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
           "src": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
           "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
@@ -95,7 +95,7 @@ export class mvSearchDisplay extends LitElement{
               ${card.description}
               <br />
               <div slot="footer">
-                <sl-button variant="default" size="medium" @click="${e => this.show(e, card)}">Learn More</sl-button>
+                <sl-button variant="primary" size="medium" pill @click="${e => this.show(e, card)}">Learn More</sl-button>
                 <sl-rating></sl-rating>
               </div>
             </sl-card>

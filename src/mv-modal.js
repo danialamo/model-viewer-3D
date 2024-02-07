@@ -29,55 +29,30 @@ export class MvModal extends LitElement{
 
     static styles = css`
      #modelContent{
-        height: 600px;
+        height: 800px;
         display: flex; 
         flex-direction: row;
         align-items: flex-start;
      }
-    
      #modelLoad{
-        max-width: 600px;
+        width: 100%;
+        height: 100%;
      }
-    
-     #modalInfo{
-        max-width: 600px;
-        display: block;
-     }
-     #infoContent{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 16px;
-        padding: 24px;
-     }
-        
-     h6{
-        color: #000;
-        font-family: Montserrat;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 180%; /* 43.2px */
-     }
-
-     p{
-        color: #000;
-        font-family: Inter;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 180%; /* 36px */
-        word-wrap: break-word; 
-        width: 580px;
+     
+     .load model-viewer {
+        width: 100%;
+        height: 100%;
      }
 
     `;
 
     render(){
         return html`
-        <sl-dialog label="${this.title}" class="dialog-overview" style="--width: 700px;">
-            <div id="modalContent"> 
-                <div id="modelLoad"> 
+        <sl-dialog label="${this.title}" class="dialog-scrolling" style="--width: 900px;">
+
+
+            <div id="modelContent"> 
+                <div id="modelLoad" class="load"> 
                     <model-viewer 
                     alt="${this.alt}" 
                     src="${this.src}" 
@@ -90,19 +65,12 @@ export class MvModal extends LitElement{
                     style="height: 500px;" 
                     ar-status="not-presenting" 
                     ></model-viewer>
-                </div>
-                <div id="modalInfo">
-                    <div class="infoContent">
-                            <h6>About</h6>
-                            <p>${this.text}</p>
-                    </div>
-                    <div class="infoContent">
-                            <h6>Embed</h6>
-                            <p>${this.embed}</p>
-                    </div>
-                </div>   
+                </div>  
             </div> 
-        <sl-button slot="footer" variant="primary" @click="${this.hide}">Close</sl-button>
+
+
+
+        <sl-button slot="footer" variant="primary" size="medium" pill @click="${this.hide}">Close</sl-button>
         </sl-dialog>
         `
     }
