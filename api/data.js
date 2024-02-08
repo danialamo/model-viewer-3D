@@ -59,8 +59,6 @@ jwtClient.authorize(function (err, tokens) {
             "embed": row[8]
           });
         }
-      }
-      if(search != '') {  
         return results;
       }
       res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
