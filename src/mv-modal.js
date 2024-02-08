@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit";
 import "@google/model-viewer/dist/model-viewer.js";
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/dialog/dialog.js';
+import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.13.1/cdn/components/details/details.js';
 
 export class MvModal extends LitElement{
     static get properties(){
@@ -29,30 +30,23 @@ export class MvModal extends LitElement{
 
     static styles = css`
      #modelContent{
-        height: 800px;
         display: flex; 
         flex-direction: row;
         align-items: flex-start;
      }
-     #modelLoad{
-        width: 100%;
-        height: 100%;
+     #modelInfo{
+        padding-top: 50px;
      }
-     
-     .load model-viewer {
+     sl-details{
         width: 100%;
-        height: 100%;
      }
-
     `;
 
     render(){
         return html`
         <sl-dialog label="${this.title}" class="dialog-scrolling" style="--width: 900px;">
-
-
             <div id="modelContent"> 
-                <div id="modelLoad" class="load"> 
+                <div id="modelLoad"> 
                     <model-viewer 
                     alt="${this.alt}" 
                     src="${this.src}" 
@@ -66,10 +60,17 @@ export class MvModal extends LitElement{
                     ar-status="not-presenting" 
                     ></model-viewer>
                 </div>  
+                <div id="modelInfo">
+                <sl-details summary="About" open>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </sl-details>
+                <sl-details summary="Embed">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </sl-details>
+                </div>
             </div> 
-
-
-
         <sl-button slot="footer" variant="primary" size="medium" pill @click="${this.hide}">Close</sl-button>
         </sl-dialog>
         `

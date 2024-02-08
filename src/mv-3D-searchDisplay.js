@@ -23,8 +23,8 @@ export class mvSearchDisplay extends LitElement{
         super();
         this.cards = [{
           "title": "Spaceman 1",
-          "image": "spacemanCardImage.png",
-          "description": "spacemanCardImage.png",
+          "image": "/assets/spaceman.jpg",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
           "src": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
           "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
@@ -86,11 +86,6 @@ export class mvSearchDisplay extends LitElement{
         <div ID="modelViewer">
         ${this.cards.map(card => html`
             <sl-card class="card-overview">
-              <img
-                slot="image"
-                src="${card.image}"
-                alt="A spaceman in a suit"
-              />
               <strong>${card.title}</strong><br/><br/>
               ${card.description}
               <br />
