@@ -21,22 +21,12 @@ export class mvSearchDisplay extends LitElement{
     }
     constructor(){
         super();
-        this.cards = [{
-          "title": "Spaceman 1",
-          "image": "/assets/spaceman.jpg",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "alt": "Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum",
-          "src": "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
-          "modelImage": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
-          "poster": "https://modelviewer.dev/shared-assets/environments/moon_1k.hdr",
-          "about": "*Insert About Here*", 
-          "embed": "Insert embed code"
-        }]; 
+        this.cards = []; 
         this.getUpdateResults();
     }
 
-    getUpdateResults(value = ''){
-      const address = `/api/data?search=${value}`; 
+    getUpdateResults(){
+      const address = `/api/data`; 
       fetch(address).then((response) =>{
         if(response.ok){
           return response.json();
@@ -68,9 +58,7 @@ export class mvSearchDisplay extends LitElement{
         width: 400px; 
         height: 500px;
       }
-  
-    `
-    
+    ` 
     render(){
       return html`
         <div ID='topSection'></div>

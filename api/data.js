@@ -20,6 +20,7 @@ const jwtClient = new google.auth.JWT(
 
 //authenticate request 
 jwtClient.authorize(function (err, tokens) {
+  console.log("starting auth process");
   if (err) {
     console.log(err);
     return;
@@ -31,9 +32,8 @@ jwtClient.authorize(function (err, tokens) {
  const sheets = google.sheets('v4');
 
  export default async function handler(req, res) {
-    const search = req.query.search || '';
     // sheet ID we are pulling from
-    let spreadsheetId = '1uTd_uBHnggaWBvgA5oWCKehzSsIT7UFh_2c4CTvMICQ';
+    let spreadsheetId = '1l3Gnz3Yjh3MMrTdqaXdtV9DO7NF75LXm6iZYMsnTNJU';
     // range
     let sheetRange = 'Sheet1!2:10';
     let results = [];
